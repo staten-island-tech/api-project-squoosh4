@@ -1,4 +1,4 @@
-import './style.css'
+import './css/style.css'
 
 async function getData() {
 
@@ -9,3 +9,20 @@ async function getData() {
 };
 
 getData();
+
+function cardCreate(arr) {
+
+	DOMSelector.cardHolder.innerHTML = ""
+	arr.forEach((item) => DOMSelector.cardHolder.insertAdjacentHTML(
+		"beforeend",
+		`
+      <div class="${item.common_locations} ${item.dlc}" id="${item.name} ${item.id}">
+        <p>${item.name}</p>
+        <p>${item.id}</p>
+        <p>${item.description}</p>
+      </div>
+    `
+	));
+};
+
+cardCreate(data);
