@@ -1,9 +1,14 @@
-import './css/style.css'
+import '../css/style.css'
+import { DOMSelector } from './domselector.js'
+
+let data = ""
 
 async function getData() {
 
     let unparsed_data = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all");
-    let data = await unparsed_data.json();
+    javaScriptObjectNotationData = await unparsed_data.json();
+    data = javaScriptObjectNotationData.data;
+
     console.log(data);
 
 };
@@ -12,8 +17,8 @@ getData();
 
 function cardCreate(arr) {
 
-	DOMSelector.cardHolder.innerHTML = ""
-	arr.forEach((item) => DOMSelector.cardHolder.insertAdjacentHTML(
+	DOMSelector.body.innerHTML = ""
+	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
 		"beforeend",
 		`
       <div class="${item.common_locations} ${item.dlc}" id="${item.name} ${item.id}">
