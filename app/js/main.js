@@ -4,7 +4,7 @@ import { DOMSelector } from './domselector.js'
 let data = ""
 
 async function getData() {
-
+    let javaScriptObjectNotationData = "";
     let unparsed_data = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all");
     javaScriptObjectNotationData = await unparsed_data.json();
     data = javaScriptObjectNotationData.data;
@@ -17,7 +17,7 @@ getData();
 
 function cardCreate(arr) {
 
-	DOMSelector.body.innerHTML = ""
+	DOMSelector.cardHolder.innerHTML = ""
 	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
 		"beforeend",
 		`
