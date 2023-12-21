@@ -18,3 +18,10 @@
     src: url(../fonts/botw-sheikah-sarinilli/BotW_Sheikah.ttf);
 
 }
+
+.compendium-card{
+
+    border-style: double;
+    border-radius: 50% 20% / 10% 40%;
+    
+}

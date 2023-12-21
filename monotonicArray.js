@@ -7,7 +7,7 @@ function monoCheck(arr) {
 
         for (let i = 1; i < arr.length; i++) {
 
-            for (let j = 0; j < arr.length; k++) {
+            for (let j = 0; j < arr.length; j++) {
 
                 if (arr[j] >= arr[i]) { continue
                 } else { k++; break }
@@ -22,7 +22,7 @@ function monoCheck(arr) {
 
         for (let i = 1; i < arr.length; i++) {
 
-            for (let j = 0; j < arr.length; k++) {
+            for (let j = 0; j < arr.length; j++) {
 
                 if (arr[j] <= arr[i]) { continue } else { k++; break }
             
@@ -49,3 +49,15 @@ console.log(monoCheck(arr1))
 console.log(monoCheck(arr2))
 console.log(monoCheck(arr3))
 console.log(monoCheck(arr4))
+
+const array = [4, 5, 6]
+
+let array2 = [1, 2, 3]
+
+array.push(...array2)
+
+console.log(array)
+
+array.push(array2)
+
+console.log(array)
