@@ -17,17 +17,18 @@ function cardCreate(arr) {
 	));
 };
 
-async function getData() {
+async function firstFetch() {
 
-    let unparsed_data = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all".reev);
+    let unparsed_data = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all");
     const javaScriptObjectNotationData = await unparsed_data.json();
-	const data = javaScriptObjectNotationData.reverse() //javaScriptObjectNotationData.data;
+    const data = javaScriptObjectNotationData.data;
+    data.sort(function(a, b){return a.id-b.id});
 
-
-    cardCreate(data);
 	console.log(data);
-	
 	return data;
 
 };
-getData()
+
+firstFetch();
+
+addEventListener("click",)
