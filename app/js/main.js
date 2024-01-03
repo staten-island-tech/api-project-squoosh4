@@ -8,9 +8,10 @@ function cardCreate(arr) {
 	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
 		"beforeend",
 		`
-      <div class="${item.common_locations} ${item.dlc}" id="${item.id}">
-        <p class="card-text">${item.name.uppercase}</p>
+      <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}">
+        <p class="card-text">${item.name}</p>
         <p>${item.id}</p>
+        <img src="${item.image}" class="money-shot">
 
       </div>
     `

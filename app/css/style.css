@@ -23,5 +23,12 @@
 
     border-style: double;
     border-radius: 50% 20% / 10% 40%;
+    height: 30px;
+    width: 30px;
     
+}
+
+.money-shot {
+    height:100%;
+    width: 100%;
 }
