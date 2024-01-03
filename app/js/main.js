@@ -8,10 +8,10 @@ function cardCreate(arr) {
 	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
 		"beforeend",
 		`
-      <div class="${item.common_locations} ${item.dlc}" id="${item.name} ${item.id}">
-        <p class="card-text">${item.name}</p>
+      <div class="${item.common_locations} ${item.dlc}" id="${item.id}">
+        <p class="card-text">${item.name.uppercase}</p>
         <p>${item.id}</p>
-        <p>${item.description}</p>
+
       </div>
     `
 	));
@@ -25,10 +25,23 @@ async function firstFetch() {
     data.sort(function(a, b){return a.id-b.id});
 
 	console.log(data);
+    cardCreate(data)
 	return data;
 
 };
 
+async function getData(id) {
+
+    let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${id}`);
+    const javaScriptObjectNotationData = await unparsed_data.json();
+    const data = javaScriptObjectNotationData.data;
+    
+    console.log(data);
+    return data;
+    
+};
+
 firstFetch();
 
-addEventListener("click",)
+
+//addEventListener("click",)
