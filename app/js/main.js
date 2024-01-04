@@ -9,8 +9,7 @@ function cardCreate(arr) {
 		"beforeend",
 		`
       <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}">
-        <p class="card-text">${item.name}</p>
-        <p>${item.id}</p>
+        <p class="compendium-number">${item.id}</p>
         <img src="${item.image}" class="money-shot">
 
       </div>
