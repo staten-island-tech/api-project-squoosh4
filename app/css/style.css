@@ -42,16 +42,18 @@
     
 }
 
-.money-shot {
-    height:100%;
-    width: 100%;
-}
+.money-shot { height:100%; width: 100%; }
+
 .compendium-number{
 
     position: absolute;
         left: 110px;
         top: 110px;
 
-    z-index: 79;
+    z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
     
+}
+
+.detailed-view-viewspace{
+    z-index: 8;
 }
