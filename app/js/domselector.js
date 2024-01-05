@@ -6,10 +6,12 @@ export const DOMSelector = {
         monsterButton: document.querySelector("#monsters-button"),
         materialButton: document.querySelector("#materials-button"),
         equipmentButton: document.querySelector("#equipment-button"),
-        treasureButton: document.querySelector("#treasure-button")
+        treasureButton: document.querySelector("#treasure-button"),
+        testButton: document.querySelector("#test-button")
     },
     body: document.body,
     cardHolder: document.querySelector(".card-holder"),
-    compendiumCard: document.querySelectorAll(".compendium-card")
+    compendiumCard: document.querySelectorAll(".compendium-card"),
+    detailedViewViewspace: document.querySelector(".detailed-view-viewspace")
 
 };  

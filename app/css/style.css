@@ -37,22 +37,14 @@
 
     border-style: double;
     /* border-radius: 50% 20% / 10% 40%; */
-    height: 120px;
-    width: 120px;
+    height: 160px;
+    width: 160px;
     
 }
 
-.money-shot { height:100%; width: 100%; position: relative; z-index: 6;}
+.money-shot { height:100%; width: 100%; position: relative; bottom: 18px; z-index: 6;}
 
-.compendium-number{
-
-    position: relative;
-        left: 100px;
-        top: 85px;
-
-    font-family: fot-rodin;
-    z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
-    
-}
+.compendium-number{ text-align: right; position: relative; top: 140px; font-family: fot-rodin; z-index: 7; margin: 0%; 
+/* why 7? because it isn't unreasonably large and is most definetly going to show above the cards */ }
 
 .detailed-view-viewspace{ z-index: 8; }

@@ -62,9 +62,27 @@ function detailedInfoDisplay(item) {
 firstFetch();
 
 
-addEventListener("click", function(event) {
+DOMSelector.buttons.testButton.addEventListener("click", function(event){
+	event.preventDefault();
+	DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card");
+	console.log(DOMSelector.compendiumCard);
+});
 
-    event.preventDefault();
+DOMSelector.compendiumCard.Array().forEach((card) => card.addEventListener("click", function(event) {
+	
+	event.preventDefault();
+	DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card");
+	DOMSelector.detailedViewViewspace.innerHTML = `
+	<div class="${item.common_locations} ${card.dlc} compendium-card" id="${card.id}">
+	  <p class="compendium-number">${card.id}</p>
+	  <img src="${card.image}" class="money-shot">
+
+	</div>
+  `
+
+}));
+
+//    event.preventDefault();
 
     
-})
+//})
