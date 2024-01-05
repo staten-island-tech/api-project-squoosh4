@@ -1,21 +1,21 @@
 @font-face {
 
     font-family: hylia-serif;
-    src: url(../fonts/hylia_serif_beta_v0-009/HyliaSerifBeta-Regular.otf);
+    src: local("../fonts/hylia_serif_beta_v0-009/HyliaSerifBeta-Regular.otf");
 
 }
 
 @font-face {
 
     font-family: fot-rodin;
-    src: url(../fonts/fot-rodinbokutoh-pro-eb/FOT-RodinBokutohProEB.otf);
+    src: local("../fonts/fot-rodinbokutoh-pro-eb/FOT-RodinBokutohProEB.otf");
 
 }
 
 @font-face {
 
     font-family: sheikah-serif;
-    src: url(../fonts/botw-sheikah-sarinilli/BotW_Sheikah.ttf);
+    src: local("../fonts/botw-sheikah-sarinilli/BotW_Sheikah.ttf");
 
 }
 
@@ -42,18 +42,17 @@
     
 }
 
-.money-shot { height:100%; width: 100%; }
+.money-shot { height:100%; width: 100%; position: relative; z-index: 6;}
 
 .compendium-number{
 
-    position: absolute;
-        left: 110px;
-        top: 110px;
+    position: relative;
+        left: 100px;
+        top: 85px;
 
+    font-family: fot-rodin;
     z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
     
 }
 
-.detailed-view-viewspace{
-    z-index: 8;
-}
+.detailed-view-viewspace{ z-index: 8; }
