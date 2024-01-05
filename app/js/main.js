@@ -5,7 +5,7 @@ import { DOMSelector } from './domselector.js'
 function cardCreate(arr) {
 
 	DOMSelector.cardHolder.innerHTML = ""
-	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
+	arr.forEach((item) => DOMSelector.cardHolder.insertAdjacentHTML(
 		"beforeend",
 		`
       <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}">
@@ -15,6 +15,7 @@ function cardCreate(arr) {
       </div>
     `
 	));
+
 };
 
 async function firstFetch() {
@@ -37,11 +38,33 @@ async function getData(id) {
     const data = javaScriptObjectNotationData.data;
     
     console.log(data);
+    detailedInfoDisplay(data);
     return data;
     
 };
 
+function detailedInfoDisplay(item) {
+
+    DOMSelector.cardHolder.innerHTML = ""
+	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
+		"beforeend",
+		`
+      <div class="" id="${item.id}">
+        <p class="compendium-number">${item.id}</p>
+        <img src="${item.image}" class="money-shot">
+
+      </div>
+    `
+	));
+    
+}
+
 firstFetch();
 
 
-//addEventListener("click",)
+addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    
+})
