@@ -45,17 +45,12 @@ async function getData(id) {
 
 function detailedInfoDisplay(item) {
 
-    DOMSelector.cardHolder.innerHTML = ""
-	arr.forEach((item) => DOMSelector.body.insertAdjacentHTML(
-		"beforeend",
+    DOMSelector.detailedViewViewspace.innerHTML = 
 		`
-      <div class="" id="${item.id}">
+      <p class="name-text">
         <p class="compendium-number">${item.id}</p>
         <img src="${item.image}" class="money-shot">
-
-      </div>
-    `
-	));
+    `;
     
 }
 

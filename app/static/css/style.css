@@ -1,3 +1,5 @@
+/*  fonts  */
+
 @font-face {
 
     font-family: hylia-serif;
@@ -18,6 +20,9 @@
     src: local("../fonts/botw-sheikah-sarinilli/BotW_Sheikah.ttf");
 
 }
+
+
+/*  everything that shows on page load  */
 
 .card-holder{
 
@@ -49,18 +54,19 @@
     position: relative;
         top: 85px;
 
-    font-family: fot-rodin;
+    font-family: sheikah-serif;
     z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
     color: #ffffff;
     text-shadow:
-      0 0 2px #3dc5ff,
-      0 0 4px #3dc5ff,
-      0 0 8px #3dc5ff,
-      0 0 12px #3dc5ff,
-      0 0 20px #3dc5ff;
+      0 0 2px #000000 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 4px #000000 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 8px #000000 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 12px #000000 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 20px #000000 /* #3dc5ff cant be used because of contrast issues */;
     text-align: right;
     padding-right: 2px;
     
 }
 
 .detailed-view-viewspace{ z-index: 8; }
+
