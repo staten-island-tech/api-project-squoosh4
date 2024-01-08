@@ -27,7 +27,8 @@ async function firstFetch() {
     data.sort(function(a, b){return a.id-b.id});
 
 	console.log(data);
-    cardCreate(data)
+    cardCreate(data);
+    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card")
 	return data;
 
 };
@@ -47,21 +48,20 @@ async function getData(id) {
 function detailedInfoDisplay(item) {
 
     DOMSelector.detailedViewViewspace.innerHTML = 
-		`
+	`
       <p class="name-text">${item.name}</p>
+      <p class="locations">${item.common_locations}</p>
       <p class="viewspace-id-number">#${item.id}</p>
       <img src="${item.image}" class="money-shot">
       <p class="viewport-desc">${item.desc}</p>
+      <button id="close-window"></button>
     `;
+    DOMSelector.closeWindowButton = document.querySelector("#close-window");
+    DOMSelector.closeWindowButton.addEventListener("click", function(event){ DOMSelector.detailedViewViewspace.innerHTML = ""; });
     
 };
 
 firstFetch();
 
 
-DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", function(event) {
-
-    event.preventDefault();
-    detailedInfoDisplay(card);
-    
-}));
+DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", function(event) { detailedInfoDisplay(card); }));

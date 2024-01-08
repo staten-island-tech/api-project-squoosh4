@@ -10,7 +10,7 @@
 @font-face {
 
     font-family: fot-rodin;
-    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/fot-rodinpron-db.woff2");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/fot-rodin_pro_db.woff2");
 
 }
 
@@ -79,13 +79,14 @@ body {
     text-align: center;
     position: relative;
         bottom: 100px;
-    color: #00b7ff;
+    color: #ffffff;
     text-shadow:
-      0 0 2px #6666ff /* #3dc5ff cant be used because of contrast issues */,
-      0 0 4px #4444ff /* #3dc5ff cant be used because of contrast issues */,
-      0 0 8px #6666ff /* #3dc5ff cant be used because of contrast issues */,
-      0 0 12px #4444ff /* #3dc5ff cant be used because of contrast issues */,
-      0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
+      0 0 2px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 4px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 8px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 12px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 20px #3dc5ff /* #3dc5ff cant be used because of contrast issues */;
+    
 
 }
 .compendium-number{
@@ -96,13 +97,13 @@ body {
 
     font-family: "sheikah-serif";
     z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
-    color: #ffffff;
+    color: #5cd1ff; /* #00b7ff is a really good blue color but i just cant with it combined with this glow effect */
     text-shadow:
-      0 0 2px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
-      0 0 4px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
-      0 0 8px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
-      0 0 12px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
-      0 0 20px #3dc5ff /* #3dc5ff cant be used because of contrast issues */;
+      0 0 2px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 4px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 8px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 12px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
     text-align: right;
     padding-right: 2px;
     
@@ -110,6 +111,19 @@ body {
 
 .detailed-view-viewspace{ z-index: 8; }
 
-bg-img { position: sticky; top: 0; }
+.comparison-image{ position: sticky; top: 0; height: height; width: width;}
 
 /* page load on hover */
+
+/* .compendium-number:hover { font-family: "sheikah-serif" }
+   .displayed-name:hover { font-family: "sheikah-serif" } 
+   doesnt work for some reason */
+
+/* on click */
+
+.name-text{ font-family: "hylia-serif"; font-size: 70px; text-align: center;}
+.locations{ font-family: "hylia-serif"; font-size: 18px; text-align: right;}
+.viewspace-id-number{ font-family: "hylia-serif";  font-size: 50px; text-align: left;}
+.viewport-desc{ font-family: "hylia-serif"; }
+
+.bg-img{ display: hidden; }
