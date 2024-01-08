@@ -14,9 +14,26 @@ function cardCreate(arr) {
         <p class="displayed-name">${item.name}</p>
 
       </div>
-    `
-	));
+    `),
+	);
 
+};
+
+function detailedInfoDisplay(arr) {
+
+    DOMSelector.detailedViewViewspace.computedStyleMap.display = "block";
+    DOMSelector.detailedViewViewspace.innerHTML = 
+	`
+      <p class="name-text">${item.name}</p>
+      <p class="locations">${item.common_locations}</p>
+      <p class="viewspace-id-number">#${item.id}</p>
+      <img src="${item.image}" class="money-shot">
+      <p class="viewport-desc">${item.desc}</p>
+      <button id="close-window"></button>
+    `;
+    DOMSelector.closeWindowButton = document.querySelector("#close-window");
+    DOMSelector.closeWindowButton.addEventListener("click", function(event){ DOMSelector.detailedViewViewspace.innerHTML = ""; DOMSelector.detailedViewViewspace.style.display = "none" });
+    
 };
 
 async function firstFetch() {
@@ -28,8 +45,9 @@ async function firstFetch() {
 
 	console.log(data);
     cardCreate(data);
-    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card")
-	return data;
+    DOMSelector.compendiumCard = Array.from(document.querySelectorAll(".compendium-card"))
+	DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", function(event) { getData(card.id); }));
+    return data;
 
 };
 
@@ -42,22 +60,6 @@ async function getData(id) {
     console.log(data);
     detailedInfoDisplay(data);
     return data;
-    
-};
-
-function detailedInfoDisplay(item) {
-
-    DOMSelector.detailedViewViewspace.innerHTML = 
-	`
-      <p class="name-text">${item.name}</p>
-      <p class="locations">${item.common_locations}</p>
-      <p class="viewspace-id-number">#${item.id}</p>
-      <img src="${item.image}" class="money-shot">
-      <p class="viewport-desc">${item.desc}</p>
-      <button id="close-window"></button>
-    `;
-    DOMSelector.closeWindowButton = document.querySelector("#close-window");
-    DOMSelector.closeWindowButton.addEventListener("click", function(event){ DOMSelector.detailedViewViewspace.innerHTML = ""; });
     
 };
 

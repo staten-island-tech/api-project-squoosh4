@@ -11,7 +11,7 @@ export const DOMSelector = {
     body: document.body,
     cardHolder: document.querySelector(".card-holder"),
     closeWindowButton: document.querySelector("#close-window"),
-    compendiumCard: document.querySelectorAll(".compendium-card"),
+    compendiumCard: Array.from(document.querySelectorAll(".compendium-card")),
     detailedViewViewspace: document.querySelector("detailed-view-viewspace"),
 
 }; 

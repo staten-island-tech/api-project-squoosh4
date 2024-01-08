@@ -3,21 +3,21 @@
 @font-face {
 
     font-family: hylia-serif;
-    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/hyliaserifbeta-regular.woff2");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/hyliaserifbeta-regular.woff2") format("woff2");
 
 }
 
 @font-face {
 
     font-family: fot-rodin;
-    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/fot-rodin_pro_db.woff2");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/fot-rodin_pro_db.woff2") format("woff2");
 
 }
 
 @font-face {
 
     font-family: sheikah-serif;
-    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/botw_sheikah.woff2");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/botw_sheikah.woff2") format("woff2");
 
 }
 
@@ -111,7 +111,7 @@ body {
 
 .detailed-view-viewspace{ 
 
-    display: hidden;
+    display: none;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.75);
