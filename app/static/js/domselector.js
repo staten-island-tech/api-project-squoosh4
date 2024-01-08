@@ -1,6 +1,6 @@
 export const DOMSelector = {
 
- buttons: {
+    buttons: {
 
         creatureButton: document.querySelector("#creatures-button"),
         monsterButton: document.querySelector("#monsters-button"),
@@ -8,11 +8,14 @@ export const DOMSelector = {
         equipmentButton: document.querySelector("#equipment-button"),
         treasureButton: document.querySelector("#treasure-button"),
         testButton: document.querySelector("#test-button")
+
     },
     body: document.body,
     cardHolder: document.querySelector(".card-holder"),
     closeWindowButton: document.querySelector("#close-window"),
     compendiumCard: Array.from(document.querySelectorAll(".compendium-card")),
     detailedViewViewspace: document.querySelector("detailed-view-viewspace"),
+    form: document.getElementById("form"),
+    searchForm: document.getElementById("search"),
 
 }; 

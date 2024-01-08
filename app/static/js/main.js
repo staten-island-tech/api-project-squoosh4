@@ -51,16 +51,39 @@ async function firstFetch() {
 
 };
 
-async function getData(id) {
+async function getData(info) {
 
-    let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${id}`);
+    /*if (`${info}` != "") {
+    
+        if( char.toUpperCase() != char.toLowerCase() ){
+        
+            if( info > 0 && info < 390 ) {
+    
+                let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${info}`);
+    
+        
+            }} else {
+
+                let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${info}`);
+        
+            }};
+
+    const javaScriptObjectNotationData = await unparsed_data.json();
+    const data = javaScriptObjectNotationData.data;
+    
+    if (data = {}) (DOMSelector.cardHolder.innerHTML = `<h2 class="error-header">error</h2>`)
+    console.log(data);
+    detailedInfoDisplay(data);
+    return data;*/
+    
+    let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${info}`);
     const javaScriptObjectNotationData = await unparsed_data.json();
     const data = javaScriptObjectNotationData.data;
     
     console.log(data);
     detailedInfoDisplay(data);
     return data;
-    
+
 };
 
 firstFetch();
