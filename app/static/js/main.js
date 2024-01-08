@@ -8,28 +8,27 @@ function cardCreate(arr) {
 	arr.forEach((item) => DOMSelector.cardHolder.insertAdjacentHTML(
 		"beforeend",
 		`
-      <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}">
+      <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}" tabindex=${item.id}>
         <p class="compendium-number">${item.id}</p>
         <img src="${item.image}" alt="Picture of ${item.name}" class="money-shot">
         <p class="displayed-name">${item.name}</p>
 
       </div>
-    `),
-	);
+    `));
 
 };
 
-function detailedInfoDisplay(arr) {
+function detailedInfoDisplay(data) {
 
-    DOMSelector.detailedViewViewspace.computedStyleMap.display = "block";
+    DOMSelector.detailedViewViewspace.style.display = "block";
     DOMSelector.detailedViewViewspace.innerHTML = 
 	`
-      <p class="name-text">${item.name}</p>
-      <p class="locations">${item.common_locations}</p>
-      <p class="viewspace-id-number">#${item.id}</p>
-      <img src="${item.image}" class="money-shot">
-      <p class="viewport-desc">${item.desc}</p>
-      <button id="close-window"></button>
+      <p class="name-text">${data.name}</p>
+      <p class="locations">${data.common_locations}</p>
+      <p class="viewspace-id-number">#${data.id}</p>
+      <img src="${data.image}" alt="picture of ${data.name}" class="money-shot">
+      <p class="viewport-desc">${data.description}</p>
+      <button id="close-window" tabindex="0"></button>
     `;
     DOMSelector.closeWindowButton = document.querySelector("#close-window");
     DOMSelector.closeWindowButton.addEventListener("click", function(event){ DOMSelector.detailedViewViewspace.innerHTML = ""; DOMSelector.detailedViewViewspace.style.display = "none" });
@@ -45,8 +44,9 @@ async function firstFetch() {
 
 	console.log(data);
     cardCreate(data);
-    DOMSelector.compendiumCard = Array.from(document.querySelectorAll(".compendium-card"))
-	DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", function(event) { getData(card.id); }));
+    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card");
+	DOMSelector.compendiumCard.addEventListener("click", function(event) { event.preventDefault();
+        getData(card.id); });
     return data;
 
 };
@@ -83,6 +83,7 @@ async function getData(info) {
     console.log(data);
     detailedInfoDisplay(data);
     return data;
+    //hehehehaw
 
 };
 
