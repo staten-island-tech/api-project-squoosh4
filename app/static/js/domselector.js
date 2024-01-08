@@ -13,4 +13,4 @@ export const DOMSelector = {
     compendiumCard: document.querySelectorAll(".compendium-card"),
     detailedViewViewspace: document.querySelector("detailed-view-viewspace")
 
-};  
+}; 

@@ -10,7 +10,8 @@ function cardCreate(arr) {
 		`
       <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}">
         <p class="compendium-number">${item.id}</p>
-        <img src="${item.image}" class="money-shot">
+        <img src="${item.image}" alt="Picture of ${item.name}" class="money-shot">
+        <p class="displayed-name">${item.name}</p>
 
       </div>
     `
@@ -47,19 +48,20 @@ function detailedInfoDisplay(item) {
 
     DOMSelector.detailedViewViewspace.innerHTML = 
 		`
-      <p class="name-text">
-        <p class="compendium-number">${item.id}</p>
-        <img src="${item.image}" class="money-shot">
+      <p class="name-text">${item.name}</p>
+      <p class="viewspace-id-number">#${item.id}</p>
+      <img src="${item.image}" class="money-shot">
+      <p class="viewport-desc">${item.desc}</p>
     `;
     
-}
+};
 
 firstFetch();
 
 
-addEventListener("click", function(event) {
+DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", function(event) {
 
     event.preventDefault();
-
+    detailedInfoDisplay(card);
     
-})
+}));

@@ -3,26 +3,46 @@
 @font-face {
 
     font-family: hylia-serif;
-    src: local("../fonts/hylia_serif_beta_v0-009/HyliaSerifBeta-Regular.otf");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/hyliaserifbeta-regular.woff2");
 
 }
 
 @font-face {
 
     font-family: fot-rodin;
-    src: local("../fonts/fot-rodinbokutoh-pro-eb/FOT-RodinBokutohProEB.otf");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/fot-rodinpron-db.woff2");
 
 }
 
 @font-face {
 
     font-family: sheikah-serif;
-    src: local("../fonts/botw-sheikah-sarinilli/BotW_Sheikah.ttf");
+    src: url("../fonts/webkit_conversions/webfontkit-20240107-153409/botw_sheikah.woff2");
 
 }
 
 
 /*  everything that shows on page load  */
+
+.website-title{
+
+    font-family: hylia-serif;
+    font-size: 80px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow:
+      0 0 2px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 4px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 8px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 12px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
+
+
+}
+
+body {
+    background-color: #000000;
+}
 
 .card-holder{
 
@@ -41,28 +61,48 @@
 .compendium-card{
 
     border-style: double;
+    border-color: #ffffff;
     /* border-radius: 50% 20% / 10% 40%; */
-    height: 120px;
-    width: 120px;
+    height: 170px;
+    width: 170px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 60px;
     
 }
 
-.money-shot { height:100%; width: 100%; position: relative; bottom: 50px; z-index: 6;}
+.money-shot { height: 100%; width: 100%; position: relative; bottom: 86px; z-index: 6;}
 
+.displayed-name{
+    
+    font-family: "sheikah-serif";
+    text-align: center;
+    position: relative;
+        bottom: 100px;
+    color: #00b7ff;
+    text-shadow:
+      0 0 2px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 4px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 8px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 12px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
+
+}
 .compendium-number{
 
+    font-size: 27px;
     position: relative;
-        top: 85px;
+        top: 115px;
 
-    font-family: sheikah-serif;
+    font-family: "sheikah-serif";
     z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
     color: #ffffff;
     text-shadow:
-      0 0 2px #000000 /* #3dc5ff cant be used because of contrast issues */,
-      0 0 4px #000000 /* #3dc5ff cant be used because of contrast issues */,
-      0 0 8px #000000 /* #3dc5ff cant be used because of contrast issues */,
-      0 0 12px #000000 /* #3dc5ff cant be used because of contrast issues */,
-      0 0 20px #000000 /* #3dc5ff cant be used because of contrast issues */;
+      0 0 2px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 4px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 8px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
+      0 0 12px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
+      0 0 20px #3dc5ff /* #3dc5ff cant be used because of contrast issues */;
     text-align: right;
     padding-right: 2px;
     
@@ -70,3 +110,6 @@
 
 .detailed-view-viewspace{ z-index: 8; }
 
+bg-img { position: sticky; top: 0; }
+
+/* page load on hover */
