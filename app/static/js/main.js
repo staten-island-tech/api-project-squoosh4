@@ -15,7 +15,6 @@ function cardCreate(arr) {
 
       </div>
     `));
-
 };
 
 function detailedInfoDisplay(data) {
@@ -44,16 +43,14 @@ async function firstFetch() {
 
 	console.log(data);
     cardCreate(data);
-    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card");
-	DOMSelector.compendiumCard.addEventListener("click", function(event) { event.preventDefault();
-        getData(card.id); });
+    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card")
     return data;
-
-};
+}
 
 async function getData(info) {
 
-    /*if (`${info}` != "") {
+    {
+        /*if (`${info}` != "") {
     
         if( char.toUpperCase() != char.toLowerCase() ){
         
@@ -68,13 +65,14 @@ async function getData(info) {
         
             }};
 
-    const javaScriptObjectNotationData = await unparsed_data.json();
-    const data = javaScriptObjectNotationData.data;
+        const javaScriptObjectNotationData = await unparsed_data.json();
+        const data = javaScriptObjectNotationData.data;
     
-    if (data = {}) (DOMSelector.cardHolder.innerHTML = `<h2 class="error-header">error</h2>`)
-    console.log(data);
-    detailedInfoDisplay(data);
-    return data;*/
+        if (data = {}) (DOMSelector.cardHolder.innerHTML = `<h2 class="error-header">error</h2>`)
+        console.log(data);
+        detailedInfoDisplay(data);
+        return data;*/
+    }
     
     let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${info}`);
     const javaScriptObjectNotationData = await unparsed_data.json();
@@ -83,11 +81,8 @@ async function getData(info) {
     console.log(data);
     detailedInfoDisplay(data);
     return data;
-    //hehehehaw
+    
 
 };
 
 firstFetch();
-
-
-DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", function(event) { detailedInfoDisplay(card); }));

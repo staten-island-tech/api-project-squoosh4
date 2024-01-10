@@ -71,14 +71,15 @@ body {
     
 }
 
-.money-shot { height: 100%; width: 100%; position: relative; bottom: 86px; z-index: 6;}
+.money-shot { height: 100%; width: 100%; position: relative; bottom:76px; z-index: 6;}
 
 .displayed-name{
     
     font-family: "sheikah-serif";
+    padding-bottom: 12px;
     text-align: center;
     position: relative;
-        bottom: 100px;
+        bottom: 90px;
     color: #ffffff;
     text-shadow:
       0 0 2px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
