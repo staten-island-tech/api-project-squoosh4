@@ -43,7 +43,8 @@ async function firstFetch() {
 
 	console.log(data);
     cardCreate(data);
-    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card")
+    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card");
+    DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", getData()))
     return data;
 }
 
