@@ -24,11 +24,15 @@
 
 /*  everything that shows on page load  */
 
+.bg-img{ display: none; }
+
+body { background-color: #000000; }
+
 .website-title{
 
     font-family: hylia-serif;
     font-size: 80px;
-    color: #ffffff;
+    color: #c4c4f9;
     text-align: center;
     text-shadow:
       0 0 2px #6666ff /* #3dc5ff cant be used because of contrast issues */,
@@ -38,10 +42,6 @@
       0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
 
 
-}
-
-body {
-    background-color: #000000;
 }
 
 .card-holder{
@@ -90,6 +90,7 @@ body {
     
 
 }
+
 .compendium-number{
 
     font-size: 27px;
@@ -135,5 +136,3 @@ body {
 .locations{ font-family: "hylia-serif"; font-size: 18px; text-align: right;}
 .viewspace-id-number{ font-family: "hylia-serif";  font-size: 50px; text-align: left;}
 .viewport-desc{ font-family: "hylia-serif"; }
-
-.bg-img{ display: hidden; }

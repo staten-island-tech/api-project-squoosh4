@@ -13,7 +13,7 @@ export const DOMSelector = {
     body: document.body,
     cardHolder: document.querySelector(".card-holder"),
     closeWindowButton: document.querySelector("#close-window"),
-    compendiumCard: Array.from(document.querySelectorAll(".compendium-card")),
+    compendiumCards: document.querySelectorAll(".compendium-card"),
     detailedViewViewspace: document.querySelector(".detailed-view-viewspace"),
     form: document.getElementById("form"),
     searchForm: document.getElementById("search"),

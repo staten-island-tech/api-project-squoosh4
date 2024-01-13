@@ -1,6 +1,10 @@
+// imports
+
 import '../css/style.css'
 import { DOMSelector } from './domselector.js'
 
+
+// functions
 
 function cardCreate(arr) {
 
@@ -8,12 +12,11 @@ function cardCreate(arr) {
 	arr.forEach((item) => DOMSelector.cardHolder.insertAdjacentHTML(
 		"beforeend",
 		`
-      <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}" tabindex=${item.id}>
-        <p class="compendium-number">${item.id}</p>
-        <img src="${item.image}" alt="Picture of ${item.name}" class="money-shot">
-        <p class="displayed-name">${item.name}</p>
-
-      </div>
+        <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}" tabindex=${item.id}>
+          <p class="compendium-number">${item.id}</p>
+          <img src="${item.image}" alt="Picture of ${item.name}" class="money-shot">
+          <p class="displayed-name">${item.name}</p>
+        </div>
     `));
 };
 
@@ -34,24 +37,23 @@ function detailedInfoDisplay(data) {
     
 };
 
-async function firstFetch() {
-
-    let unparsed_data = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all");
-    const javaScriptObjectNotationData = await unparsed_data.json();
-    const data = javaScriptObjectNotationData.data;
-    data.sort(function(a, b){return a.id-b.id});
-
-	console.log(data);
-    cardCreate(data);
-    DOMSelector.compendiumCard = document.querySelectorAll(".compendium-card");
-    DOMSelector.compendiumCard.forEach((card) => card.addEventListener("click", getData()))
-    return data;
-}
-
 async function getData(info) {
 
     {
         /*if (`${info}` != "") {
+//async functions
+
+async function getData(info) {
+    
+    let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${info}`);
+    const javaScriptObjectNotationData = await unparsed_data.json();
+    const data = javaScriptObjectNotationData.data;
+    
+    console.log(data);
+    detailedInfoDisplay(data);
+    return data;
+    //hehehehaw
+    /*if (`${info}` != "") {
     
         if( char.toUpperCase() != char.toLowerCase() ){
         
@@ -86,4 +88,22 @@ async function getData(info) {
 
 };
 
+async function firstFetch() {
+
+    let unparsed_data = await fetch("https://botw-compendium.herokuapp.com/api/v3/compendium/all");
+    const javaScriptObjectNotationData = await unparsed_data.json();
+    const data = javaScriptObjectNotationData.data;
+    data.sort(function(a, b){return a.id-b.id});
+
+	console.log(data);
+    cardCreate(data);
+    DOMSelector.compendiumCards = document.querySelectorAll(".compendium-card");
+	DOMSelector.compendiumCards.addEventListener("click", function() { getData(card.id); });
+    DOMSelector.compendiumCards.addEventListener("mouseover", function() { DOMSelector.compendiumCards.style = "font-family: hylia-serif"; });
+    DOMSelector.compendiumCards.addEventListener("mouseout", function() { DOMSelector.compendiumCards.style = "font-family: sheikah-serif"; }); 
+    return data;
+
+};
+
+// run first fetch to set everything in motion
 firstFetch();
