@@ -12,12 +12,13 @@ function cardCreate(arr) {
 	arr.forEach((item) => DOMSelector.cardHolder.insertAdjacentHTML(
 		"beforeend",
 		`
-        <div class="${item.common_locations} ${item.dlc} compendium-card" id="${item.id}" tabindex=${item.id}>
+        <div class="compendium-card ${item.dlc} ${item.common_locations}" id="${item.id}" tabindex=${item.id}>
           <p class="compendium-number">${item.id}</p>
           <img src="${item.image}" alt="Picture of ${item.name}" class="money-shot">
           <p class="displayed-name">${item.name}</p>
         </div>
     `));
+
 };
 
 function detailedInfoDisplay(data) {
@@ -80,11 +81,9 @@ async function getData(info) {
     let unparsed_data = await fetch(`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${info}`);
     const javaScriptObjectNotationData = await unparsed_data.json();
     const data = javaScriptObjectNotationData.data;
-    
     console.log(data);
     detailedInfoDisplay(data);
     return data;
-    
 
 };
 
@@ -98,9 +97,9 @@ async function firstFetch() {
 	console.log(data);
     cardCreate(data);
     DOMSelector.compendiumCards = document.querySelectorAll(".compendium-card");
-	DOMSelector.compendiumCards.addEventListener("click", function() { getData(card.id); });
-    DOMSelector.compendiumCards.addEventListener("mouseover", function() { DOMSelector.compendiumCards.style = "font-family: hylia-serif"; });
-    DOMSelector.compendiumCards.addEventListener("mouseout", function() { DOMSelector.compendiumCards.style = "font-family: sheikah-serif"; }); 
+	DOMSelector.compendiumCards.forEach((item) => item.addEventListener("click", function() { getData(item.id); }));
+    /* DOMSelector.compendiumCards.forEach((item) => item.addEventListener("mouseover", function() { DOMSelector.compendiumCards.style = "font-family: hylia-serif"; }));
+    DOMSelector.compendiumCards.forEach((item) => item.addEventListener("mouseout", function() { DOMSelector.compendiumCards.style = "font-family: sheikah-serif"; })); */
     return data;
 
 };

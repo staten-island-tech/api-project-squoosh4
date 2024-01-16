@@ -60,8 +60,7 @@ body { background-color: #000000; }
 
 .compendium-card{
 
-    border-style: double;
-    border-color: #ffffff;
+    font-family: "sheikah-serif";
     /* border-radius: 50% 20% / 10% 40%; */
     height: 170px;
     width: 170px;
@@ -71,11 +70,13 @@ body { background-color: #000000; }
     
 }
 
-.money-shot { height: 100%; width: 100%; position: relative; bottom:76px; z-index: 6;}
+.money-shot {  border-style: double;
+    border-color: #ffffff;
+    height: 100%; width: 100%; position: relative; bottom:76px; z-index: 6;}
 
 .displayed-name{
-    
-    font-family: "sheikah-serif";
+
+    font-family: inherit;
     padding-bottom: 12px;
     text-align: center;
     position: relative;
@@ -87,7 +88,6 @@ body { background-color: #000000; }
       0 0 8px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
       0 0 12px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
       0 0 20px #3dc5ff /* #3dc5ff cant be used because of contrast issues */;
-    
 
 }
 
@@ -97,7 +97,7 @@ body { background-color: #000000; }
     position: relative;
         top: 115px;
 
-    font-family: "sheikah-serif";
+    font-family: inherit;
     z-index: 7; /* why 7? because it isn't unreasonably large and is most definetly going to show above the thingies */
     color: #5cd1ff; /* #00b7ff is a really good blue color but i just cant with it combined with this glow effect */
     text-shadow:
@@ -125,6 +125,8 @@ body { background-color: #000000; }
 .comparison-image{ position: sticky; top: 0; height: height; width: width;}
 
 /* page load on hover */
+
+.compendium-card:hover { font-family: "hylia-serif"; }
 
 /* .compendium-number:hover { font-family: "sheikah-serif" }
    .displayed-name:hover { font-family: "sheikah-serif" } 

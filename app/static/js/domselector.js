@@ -15,7 +15,5 @@ export const DOMSelector = {
     closeWindowButton: document.querySelector("#close-window"),
     compendiumCards: document.querySelectorAll(".compendium-card"),
     detailedViewViewspace: document.querySelector(".detailed-view-viewspace"),
-    form: document.getElementById("form"),
-    searchForm: document.getElementById("search"),
 
 }; 
