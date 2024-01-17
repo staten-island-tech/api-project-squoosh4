@@ -13,9 +13,9 @@ function cardCreate(arr) {
 		"beforeend",
 		`
         <div class="compendium-card ${item.dlc} ${item.common_locations}" id="${item.id}" tabindex=${item.id}>
-          <header><p class="compendium-number">${item.id}</p></header>
-          <figure><img src="${item.image}" alt="Picture of ${item.name}" class="money-shot"></figure>
-          <footer><p class="displayed-name">${item.name}</p></footer>
+          <p class="compendium-number">${item.id}</p>
+          <img src="${item.image}" alt="Picture of ${item.name}" class="money-shot">
+          <p class="displayed-name">${item.name}</p>
         </div>
     `));
 
