@@ -24,15 +24,17 @@ function cardCreate(arr) {
 function detailedInfoDisplay(data) {
 
     DOMSelector.detailedViewViewspace.style.display = "block";
+    DOMSelector.detailedViewViewspace.style.zIndex = 12;
     DOMSelector.detailedViewViewspace.innerHTML = 
 	`
       <p class="name-text">${data.name}</p>
       <p class="locations">${data.common_locations}</p>
       <p class="viewspace-id-number">#${data.id}</p>
-      <img src="${data.image}" alt="picture of ${data.name}" class="money-shot">
+      <img src="${data.image}" alt="picture of ${data.name}" class="big-money-shot">
       <p class="viewport-desc">${data.description}</p>
-      <button id="close-window" tabindex="0"></button>
+      <button id="close-window" tabindex="0">go back</button>
     `;
+
     DOMSelector.closeWindowButton = document.querySelector("#close-window");
     DOMSelector.closeWindowButton.addEventListener("click", function(event){ DOMSelector.detailedViewViewspace.innerHTML = ""; DOMSelector.detailedViewViewspace.style.display = "none" });
     

@@ -41,7 +41,6 @@ body { background-color: #000000; }
       0 0 12px #4444ff /* #3dc5ff cant be used because of contrast issues */,
       0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
 
-
 }
 
 .card-holder{
@@ -67,6 +66,7 @@ body { background-color: #000000; }
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 60px;
+    z-index: 10;
     
 }
 
@@ -113,12 +113,19 @@ body { background-color: #000000; }
 
 .detailed-view-viewspace{ 
 
+    white-space: wrap;
     display: none;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.75);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);z-index: 8; 
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    z-index: 9;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
 
 }
 
@@ -134,7 +141,50 @@ body { background-color: #000000; }
 
 /* on click */
 
-.name-text{ font-family: "hylia-serif"; font-size: 70px; text-align: center;}
-.locations{ font-family: "hylia-serif"; font-size: 18px; text-align: right;}
-.viewspace-id-number{ font-family: "hylia-serif";  font-size: 50px; text-align: left;}
-.viewport-desc{ font-family: "hylia-serif"; }
+.name-text{
+
+    display: block;
+    font-family: "hylia-serif"; 
+    font-size: 70px; 
+    text-align: center; 
+    color: #ffffff;
+    text-shadow:
+        0 0 2px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+        0 0 4px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+        0 0 8px #6666ff /* #3dc5ff cant be used because of contrast issues */,
+        0 0 12px #4444ff /* #3dc5ff cant be used because of contrast issues */,
+        0 0 20px #6666ff /* #3dc5ff cant be used because of contrast issues */;
+
+}
+.big-money-shot{
+    display: block;
+    height: 280px;
+    width: 280px;
+}
+.locations{ display:block; font-family: "hylia-serif"; font-size: 18px; text-align: left; color:#ffffff;}
+.viewspace-id-number{
+
+    display: block;
+    position: relative;
+    font-family: "hylia-serif";
+    font-size: 50px;
+    text-align: left;
+    color: #ffffff;
+    margin-left: 100px;
+    text-shadow:
+        0 0 2px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
+        0 0 4px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
+        0 0 8px #3dc5ff /* #3dc5ff cant be used because of contrast issues */,
+        0 0 12px #3dffc5 /* #3dc5ff cant be used because of contrast issues */,
+        0 0 20px #3dc5ff /* #3dc5ff cant be used because of contrast issues */;
+
+}
+.viewport-desc{ display: block; font-family: "hylia-serif"; color:#ffffff; }
+
+#close-window{
+
+    position: fixed;
+    top: 100px;
+    left: 100px;
+
+}
